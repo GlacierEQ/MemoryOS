@@ -3,7 +3,6 @@ import numpy as np
 from collections import defaultdict
 import faiss
 import heapq
-import threading
 from datetime import datetime
 
 try:
@@ -47,7 +46,6 @@ class MidTermMemory:
 
         self.embedding_model_name = embedding_model_name
         self.embedding_model_kwargs = embedding_model_kwargs if embedding_model_kwargs is not None else {}
-        self.lock = threading.Lock()
         self.load()
 
     def get_page_by_id(self, page_id):
@@ -372,9 +370,8 @@ class MidTermMemory:
             # "heap_snapshot": self.heap 
         }
         try:
-            with self.lock:
-                with open(self.file_path, "w", encoding="utf-8") as f:
-                    json.dump(data_to_save, f, ensure_ascii=False, indent=2)
+            with open(self.file_path, "w", encoding="utf-8") as f:
+                json.dump(data_to_save, f, ensure_ascii=False, indent=2)
         except IOError as e:
             print(f"Error saving MidTermMemory to {self.file_path}: {e}")
 

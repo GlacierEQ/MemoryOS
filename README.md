@@ -3,6 +3,9 @@
   <img src="https://github.com/user-attachments/assets/eb3b167b-1ace-476e-89dc-1a7891356e0b" alt="logo" width="400"/>
 </div>
 <p align="center">
+    <a href="readme_cn.md" target="_blank">
+    <img src="https://img.shields.io/badge/Readme-中文-blue" alt="Readme:中文">
+  </a>
   <a href="https://arxiv.org/abs/2506.06326">
     <img src="https://img.shields.io/badge/Arxiv-paper-red" alt="Mem0 Discord">
   </a>
@@ -52,13 +55,32 @@
 
 <span id='news'/>
 
+## 🧠 Memory Family 
+
+Welcome to our **Memory Family**, a research line dedicated to exploring AI Memory.
+
+> [**Survey on AI Memory: Theories, Taxonomies, Evaluations, and Emerging Trends**](http://github.com/BAI-LAB/Survey-on-AI-Memory/blob/main/Survey%20on%20AI%20Memory.pdf)  
+> **TL;DR:** Provides a unified theoretical framework for AI Memory, introducing a comprehensive taxonomy and systematically analyzing memory mechanisms, applications, and evaluation methods.  
+> 📄 Paper: http://github.com/BAI-LAB/Survey-on-AI-Memory/blob/main/Survey%20on%20AI%20Memory.pdf
+
+> [**LightSearcher: Efficient DeepSearch via Experiential Memory**](https://arxiv.org/abs/2512.06653)  
+> **TL;DR:** Introduces experiential memory into deep search systems, enabling models to learn from successful reasoning trajectories and improve search efficiency.  
+> 📄 Paper: https://arxiv.org/abs/2512.06653
+
+> [**Memory OS of AI Agent**](https://arxiv.org/abs/2506.06326)  
+> **TL;DR:** Proposes a memory operating system for AI agents that manages short-term, mid-term, and long-term personal memory through hierarchical storage, dynamic updating, retrieval, and generation, improving coherence and personalization in long conversations.  
+> 📄 Paper: https://arxiv.org/abs/2506.06326
+
 ## 📣 Latest News
-*   *<mark>[new]</mark>* 🔥🔥 🔥 **[2025-07-15]**: **🔌 Support** for Vector Database [Chromadb](#memoryos_chromadb-getting-started)
-*   *<mark>[new]</mark>* 🔥🔥 🔥 **[2025-07-15]**: **🔌 Integrate** [Docker](#docker-getting-started) into deployment
-*   *<mark>[new]</mark>* 🔥🔥  **[2025-07-14]**: **⚡ Acceleration** of MCP parallelization 
-*   *<mark>[new]</mark>* 🔥🔥  **[2025-07-14]**: **🔌 Support** for BGE-M3 & Qwen3 embeddings on PyPI and MCP.
-*   *<mark>[new]</mark>* 🔥  **[2025-07-09]**: **📊 Evaluation** of the MemoryOS on LoCoMo Dataset: Publicly Available [👉Reproduce](#reproduce).
-*   *<mark>[new]</mark>* 🔥 **[2025-07-08]**: **🏆 New Config Parameter**
+*   *<mark>[new]</mark>* 🔥🔥🔥  **[2026-01-15]**: **✨Released** [Survey on AI Memory: Theories, Taxonomies, Evaluations, and Emerging Trends](https://github.com/BAI-LAB/Survey-on-AI-Memory)!
+*   *<mark>[new]</mark>* 🔥🔥  **[2025-09-11]**: **🚀Open-sourced** the [Playground platform](#playground-getting-started)!
+*   *<mark>[new]</mark>* 🔥🔥  **[2025-08-21]**: **🎉Accepted**  by EMNLP 2025 main conference!
+*   *<mark>[new]</mark>* 🔥 **[2025-07-15]**: **🔌 Support** for Vector Database [Chromadb](#memoryos_chromadb-getting-started)
+*   *<mark>[new]</mark>* 🔥 **[2025-07-15]**: **🔌 Integrate** [Docker](#docker-getting-started) into deployment
+*   *<mark>[new]</mark>*   **[2025-07-14]**: **⚡ Acceleration** of MCP parallelization 
+*   *<mark>[new]</mark>*   **[2025-07-14]**: **🔌 Support** for BGE-M3 & Qwen3 embeddings on PyPI and MCP.
+*   *<mark>[new]</mark>*   **[2025-07-09]**: **📊 Evaluation** of the MemoryOS on LoCoMo Dataset: Publicly Available [👉Reproduce](#reproduce).
+*   *<mark>[new]</mark>*  **[2025-07-08]**: **🏆 New Config Parameter**
 *   New parameter configuration: **similarity_threshold**. For configuration file, see 📖 [Documentation](https://bai-lab.github.io/MemoryOS/docs) page.
 *   *<mark>[new]</mark>*   **[2025-07-07]**: **🚀5 Times Faster**
 *   The MemoryOS (PYPI) implementation has been upgraded: **5 times faster** (reduction in latency) through parallelization optimizations.
@@ -169,6 +191,7 @@ All model calls use the OpenAI API interface; you need to supply the API key and
   * <a href='#MCP-mode'>MemoryOS-MCP</a>
   * <a href='#memoryos_chromadb-getting-started'>MemoryOS-chromadb</a>
   * <a href='#docker-getting-started'>Docker</a>
+  * <a href='#playground-getting-started'>Playground</a>
 * <a href='#todo'>☑️ Todo List</a>
 * <a href='#reproduce'>🔬 How to Reproduce the Results in the Paper </a>
 * <a href='#doc'>📖 Documentation </a>
@@ -401,6 +424,22 @@ docker build -t memoryos .
 docker run -it --gpus=all memoryos /bin/bash
 ```
 
+## 📖Playground Getting Started
+
+```bash
+cd MemoryOS/memoryos-playground/memdemo/
+
+python3 app.py
+```
+After launching the main interface, fill in the corresponding User ID, OpenAI API Key, Model, and API Base URL.
+<img width="645" height="645" alt="image" src="https://github.com/user-attachments/assets/b88f965a-cae5-4ba5-8d29-b82f90e2dac9" />
+
+After entering the system, you can use the Help button to view the functions of each button. 
+
+The user's memory is stored under MemoryOS-main/memoryos-playground/memdemo/data
+
+<img width="645" height="645" alt="image" src="https://github.com/user-attachments/assets/770857d7-5ea2-46b3-8f5c-8150c32d942a" />
+
 ## 🎯Reproduce
 ```bash
 cd eval
@@ -462,7 +501,7 @@ BaiJia AI is a research team guided by Associate Professor Bai Ting from Beijing
 
 <div style="display: flex; justify-content: center; gap: 20px;">
   <img src="https://github.com/user-attachments/assets/42651f49-f1f7-444d-9455-718e13ed75e9" alt="百家Agent公众号" width="250"/> 
-  <img src="https://github.com/user-attachments/assets/a16d9d4e-71bf-496c-9bbb-cb7cf11fe250" alt="微信群二维码" width="250"/>
+  <img src="https://github.com/user-attachments/assets/a28d33b8-c999-4f96-969e-37d2ef4d6781" alt="微信群二维码" width="250"/>
 
 </div>
 
