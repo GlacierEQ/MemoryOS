@@ -6,11 +6,11 @@ transformers>=4.51.0              # Required for newer sentence-transformer feat
 FlagEmbedding>=1.2.9                # For BGE-M3 model support
 
 # Vector database for efficient storage and retrieval
-chromadb==0.4.24
+chromadb==1.5.9
 
 openai
 # Web framework (for demo)
-flask>=2.0.0,<3.0.0
+flask>=3.1.3,<4.0.0
 
 # Optional utilities
 python-dotenv>=0.19.0,<2.0.0
